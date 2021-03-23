@@ -3,7 +3,7 @@ from typing import List
 import databases
 import sqlalchemy
 import uvicorn
-from fastapi import FastAPI, Form
+from fastapi import FastAPI, Form, Query
 from pydantic import BaseModel
 
 # Test project for Interview
@@ -76,8 +76,8 @@ async def create_note(note: NoteIn):
 
 
 @app.post("/login/")
-async def login(username: str = Form(...), password: str = Form(...)):
-    return {"username": username}
+async def login(_q: str = Query("eu", enum=["SONG", "PODCAST", "AUDIOBOOK"])):
+    return {"username": _q}
 
 
 if __name__ == '__main__':
