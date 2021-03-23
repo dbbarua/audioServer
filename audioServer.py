@@ -3,7 +3,7 @@ from typing import List
 import databases
 import sqlalchemy
 import uvicorn
-from fastapi import FastAPI, Form, Query
+from fastapi import FastAPI, Query
 from pydantic import BaseModel
 
 # Test project for Interview
