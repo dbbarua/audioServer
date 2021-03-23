@@ -6,10 +6,10 @@ import uvicorn
 from fastapi import FastAPI, Form
 from pydantic import BaseModel
 
-#Test project for Interview
-#Create a FastAPI for uploading audio files
-#Developer : dbbarua@icloud.com
-#Date : 23 mar 2021
+# Test project for Interview
+# Create a FastAPI for uploading audio files
+# Developer : Deepak Barua <dbbarua@icloud.com>
+# Date : 23 Mar 2021
 
 # SQLAlchemy specific code, as with any other app
 DATABASE_URL = "sqlite:///./test.db"
@@ -23,8 +23,9 @@ notes = sqlalchemy.Table(
     "notes",
     metadata,
     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
-    sqlalchemy.Column("text", sqlalchemy.String),
-    sqlalchemy.Column("completed", sqlalchemy.Boolean),
+    sqlalchemy.Column("Name", sqlalchemy.String),
+    sqlalchemy.Column("Duration", sqlalchemy.BigInteger),
+    sqlalchemy.Column("Upload Time", sqlalchemy.DateTime),
 )
 
 engine = sqlalchemy.create_engine(
