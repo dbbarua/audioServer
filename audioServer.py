@@ -23,8 +23,12 @@ notes = sqlalchemy.Table(
     "notes",
     metadata,
     sqlalchemy.Column("id", sqlalchemy.Integer, primary_key=True),
+    sqlalchemy.Column("Type", sqlalchemy.String),
     sqlalchemy.Column("Name", sqlalchemy.String),
     sqlalchemy.Column("Duration", sqlalchemy.BigInteger),
+    sqlalchemy.Column("Upload Time", sqlalchemy.DateTime),
+    sqlalchemy.Column("Author", sqlalchemy.String),
+    sqlalchemy.Column("Host/Narrator", sqlalchemy.String),
     sqlalchemy.Column("Upload Time", sqlalchemy.DateTime),
 )
 
